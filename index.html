@@ -1,0 +1,328 @@
+<html>
+
+<head>
+    <title>TRIPTOK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img src="logo-trans.png" style="width:80px">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">TRIPTOK <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destination">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hrefGallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hrefFeedback">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hrefBookNow">Book Now</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <button type="button" class="login-btn" data-toggle="modal" data-target="#loginModal">Login</button>
+                </span>
+            </div>
+        </nav>
+        <h1>Travel Across The Globe</h1>
+        <p></p>
+        <div class="input-group">
+            <input type="text" class="form-control" id="myInput" onkeyup="findCity()"
+                placeholder="Search Country or City">
+            <div class="input-group-append">
+                <button type="submit" class="input-group-text btn">Search</button>
+            </div>
+        </div>
+        <ul id="searchResult">
+            <li></li>
+        </ul>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email1" placeholder="Your email address">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password1" placeholder="Your password">
+                            </div>
+                            <button type="button" class="btn btn-info btn-block btn-round">Login</button>
+                        </form>
+
+                        <div class="text-center text-muted delimiter">or use a social network</div>
+                        <div class="d-flex justify-content-center social-buttons">
+                            <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip"
+                                data-placement="top" title="Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip"
+                                data-placement="top" title="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip"
+                                data-placement="top" title="Linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </button>
+                            </di>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="features" id="destination">
+        <h1>Featured Destinations</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img src="trip.jpg">
+                            <div class="price">
+                                <p>50K</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="feature-details">
+                            <h4>Manali</h4>
+                            <p>Manali is a high-altitude Himalayan resort town in India’s northern Himachal Pradesh
+                                state. It has a reputation as a backpacking center and honeymoon destination. Set on the
+                                Beas River, it’s a gateway for skiing in the Solang Valley and trekking in Parvati
+                                Valley. It's also a jumping-off point for paragliding, rafting and mountaineering in the
+                                Pir Panjal mountains, home to 4,000m-high Rohtang Pass.</p>
+                            <div>
+                                <span><i class="fa fa-map-marker"></i>Manali</span>
+                                <span><i class="fa fa-sun-o"></i>4 Days</span>
+                                <span><i class="fa fa-moon-o"></i>3 Nights</span>
+                            </div>
+                            <div>
+                                <button type="button" class="booking-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img src="dubai1.jpg">
+                            <div class="price">
+                                <p>100K</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="feature-details">
+                            <h4>Dubai</h4>
+                            <p>Dubai is a city and emirate in the United Arab Emirates known for luxury shopping,
+                                ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower,
+                                dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with jets and
+                                lights choreographed to music. The
+                                Palm, a resort with water and marine-animal parks.</p>
+                            <div>
+                                <span><i class="fa fa-map-marker"></i>Dubai</span>
+                                <span><i class="fa fa-sun-o"></i>4 Days</span>
+                                <span><i class="fa fa-moon-o"></i>3 Nights</span>
+                            </div>
+                            <div>
+                                <button type="button" class="booking-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-img">
+                            <img src="nepal.jpeg">
+                            <div class="price">
+                                <p>70k</p>
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <div class="feature-details">
+                            <h4>Nepal</h4>
+                            <p>Nepal, officially the Federal Democratic Republic of Nepal, is a landlocked country
+                                located in South Asia.</p>
+                            <div>
+                                <span><i class="fa fa-map-marker"></i>Nepal</span>
+                                <span><i class="fa fa-sun-o"></i>4 Days</span>
+                                <span><i class="fa fa-moon-o"></i>3 Nights</span>
+                            </div>
+                            <div>
+                                <button type="button" class="booking-btn">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery" id="hrefGallery">
+        <h1>Travelling Gallery</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="gallery-box">
+                        <img src="goa.jpg">
+                        <h4>Goa</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="gallery-box">
+                        <img src="los1.jpg">
+                        <h4>Los Angeles</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="gallery-box">
+                        <img src="paris.jpg">
+                        <h4>Paris</h4>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="gallery-box">
+                        <img src="singa.jpg">
+                        <h4>Singapore</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="banner" id="hrefBookNow">
+        <div class="banner-highlights">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Get 30% on top destination</h2>
+                        <p>Book your tickets before 31st December and avail 30% flat discount.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="booking-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="users-feedback" id="hrefFeedback">
+        <h1> Feedback </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="user-review">
+                        <p>In Budget Trips with all facility.</p>
+                        <h5>Sarthak Hardas</h5>
+                        <small>Benglaru</small>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="user-review">
+                        <p>Good place for tour.</p>
+                        <h5>Akash Bhosale</h5>
+                        <small>Mumbai</small>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="user-review">
+                        <p>Lovely Staff with all knowledge of the places</p>
+                        <h5>Prajwal Pawar</h5>
+                        <small>Pune</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="logo.jpg" class="footer-logo">
+                    <p><b> Welcome To Our Agency</b></p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Features</h4>
+                    <p>Deals & Offers</p>
+                    <p>Customer Reviews</p>
+                    <p>Cancelatio Policy</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Quick Contact</h4>
+                    <p><i class="fa fa-phone-square"></i>8446368522</p>
+                    <p><i class="fa fa-envelope"></i>sagarjadh522@gmail.com</p>
+                    <p><i class="fa fa-home"></i>Goregaon, Mumbai City</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Follow Us on</h4>
+                    <p><i class="fa fa-facebook-official"></i> Facebook</p>
+                    <p><i class="fa fa-youtube-play"></i> YouTube</p>
+                    <p><i class="fa fa-twitter"></i> Twitter</p>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Made with <i class="fa fa-heart"></i> by TRIPTOK</p>
+        </div>
+    </section>
+</body>
+
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</html>
